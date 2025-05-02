@@ -16,12 +16,15 @@ const initialState: FactState = {
   errors: []
 };
 
-export const getCatFacts = createAsyncThunk(
+export const getCatFacts = createAsyncThunk<string[], void, { rejectValue: string }>(
   'fact/fetchCatFacts',
-  async () => {
-    const response = await fetchCatFacts();
-    console.log(response.data)
-    return response.data;
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetchCatFacts();
+      return response.data;
+    } catch (err: any) {
+      return rejectWithValue(err || 'Unknown error');
+    }
   }
 );
 
@@ -42,8 +45,13 @@ export const factSlice = createSlice({
         state.status = 'succeeded';
         state.factList = action.payload;
       })
-      .addCase(getCatFacts.rejected, (state) => {
+      .addCase(getCatFacts.rejected, (state, action) => {
         state.status = 'failed';
+        if (action.payload) {
+          state.errors.push(action.payload);
+        } else {
+          state.errors.push('Unexpected error occurred');
+        }
       });
   },
 });

@@ -15,7 +15,7 @@ export function FactsList() {
   }, [dispatch]);
 
   if (isLoading === 'loading') return <div>{isLoading}</div>;
-  if (errors.length) return <div>Errors: {errors.join(',')}</div>;
+  if (errors.length) return <div>Errors: {errors.join(', ')}</div>;
   
   return (
     <div className={styles.factList}>

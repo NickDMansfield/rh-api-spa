@@ -1,6 +1,12 @@
-// A mock function to mimic making an async request for data
-export function fetchCatFacts() {
-  return new Promise<{ data: string[] }>((resolve) =>
-    setTimeout(() => resolve({ data: ['test fact 1', 'test fact 2'] }), 500)
-  );
+export async function fetchCatFacts(): Promise<{ data: string[] }> {
+  const response = await fetch('https://catfact.ninja/facts?limit=5&max_length=140');
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  const json = await response.json();
+  const facts = json.data.map((fact: any) => fact.fact);
+
+  return { data: facts };
 }
