@@ -32,7 +32,7 @@ export const factSlice = createSlice({
   name: 'fact',
   initialState,
   reducers: {
-    selectFact: (state, action: PayloadAction<string>) => {
+    selectFact: (state, action: PayloadAction<string | null>) => {
       state.selectedFact = action.payload;
     },
   },

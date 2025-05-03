@@ -1,3 +1,18 @@
 .row {
     display: flex;
 }
+
+.listItem {
+    display: flex;
+    background-color: #995577;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.listItem:hover {
+    display: flex;
+    background-color: #995577;
+    color: #FFFFFF;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
