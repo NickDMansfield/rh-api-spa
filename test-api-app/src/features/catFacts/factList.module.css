@@ -16,3 +16,34 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
+
+@media (width <= 40em) {
+
+
+    .listItem {
+        display: flex;
+        background-color: #f5f5f5;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        margin-bottom: 3px;
+        border: 1px solid darkgray
+    }
+
+    .listItem:hover {
+        display: flex;
+        background-color: #995577;
+        color: #FFFFFF;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
+
+    .fact {
+        flex: 4;
+    }
+
+    .hideBtn {
+        flex: 1;
+        background-color: darkgreen;
+        height: 100%;
+    }
+}

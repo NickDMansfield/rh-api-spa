@@ -2,12 +2,13 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;;
+  justify-content: flex-start;
 }
 
 .App-logo {
   height: 15vh;
   pointer-events: none;
+  border-radius: 10%;
 }
 
 .App-header {
@@ -19,10 +20,6 @@
   height: 20vh;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);
@@ -32,5 +29,15 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+
+@media (width <= 40em) {
+  .App-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }

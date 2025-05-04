@@ -7,6 +7,7 @@ describe('fact reducer', () => {
   const initialState: FactState = {
     selectedFact: null,
     factList: [],
+    hiddenFacts: [],
     status: 'idle',
     errors: []
   };
@@ -19,6 +20,7 @@ describe('fact reducer', () => {
     });
   });
 
+  // selectFact
   it('should set a fact when the fact is selected', () => {
     const results = factReducer({...initialState, factList: ['factorino 1', 'facto 2']}, selectFact('factorino 1'));
     expect(results.selectedFact).toEqual('factorino 1');
@@ -28,5 +30,19 @@ describe('fact reducer', () => {
     const testState = {...initialState, factList: ['factorino 1', 'facto 2'], selectedFact: 'facto 2'};
     const results = factReducer(testState, selectFact(null));
     expect(results.selectedFact).toEqual(null);
+  });
+
+  // getCatFacts
+  it('should set the stored facts to the ones returned by the network call', () => {
+    // const testState = {...initialState, factList: ['factorino 1', 'facto 2'], selectedFact: 'facto 2'};
+    // const results = factReducer(testState, selectFact(null));
+    expect(true).toEqual(null);
+  });
+
+  // hideFact
+  it('should hide the clicked fact', () => {
+    // const testState = {...initialState, factList: ['factorino 1', 'facto 2'], selectedFact: 'facto 2'};
+    // const results = factReducer(testState, selectFact(null));
+    expect(true).toEqual(null);
   });
 });

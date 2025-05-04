@@ -2,3 +2,8 @@
     display: flex;
     align-items: center;
 }
+.column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

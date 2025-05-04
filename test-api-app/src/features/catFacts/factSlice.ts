@@ -4,6 +4,7 @@ import { fetchCatFacts } from './factAPI';
 
 export interface FactState {
   factList: string[];
+  hiddenFacts: string[];
   selectedFact: string | null;
   status: string | null;
   errors: string[];
@@ -11,6 +12,7 @@ export interface FactState {
 
 const initialState: FactState = {
   factList: [],
+  hiddenFacts: [],
   selectedFact: null,
   status: 'idle',
   errors: []
@@ -20,7 +22,7 @@ export const getCatFacts = createAsyncThunk<string[], void, { rejectValue: strin
   'fact/fetchCatFacts',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetchCatFacts();
+      const response = await fetchCatFacts(10);
       return response.data;
     } catch (err: any) {
       return rejectWithValue(err || 'Unknown error');
@@ -34,6 +36,9 @@ export const factSlice = createSlice({
   reducers: {
     selectFact: (state, action: PayloadAction<string | null>) => {
       state.selectedFact = action.payload;
+    },
+    hideFact: (state, action: PayloadAction<string>) => {
+      state.hiddenFacts.push(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -56,7 +61,8 @@ export const factSlice = createSlice({
   },
 });
 
-export const { selectFact } = factSlice.actions;
+export const { selectFact, hideFact } = factSlice.actions;
 export const getSelectedFact = (state: RootState) => state.fact.selectedFact;
+export const getHiddenFacts = (state: RootState) => state.fact.hiddenFacts;
 
 export default factSlice.reducer;

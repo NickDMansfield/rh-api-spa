@@ -1,5 +1,5 @@
-export async function fetchCatFacts(): Promise<{ data: string[] }> {
-  const response = await fetch('https://catfact.ninja/facts?limit=5&max_length=140');
+export async function fetchCatFacts(numToFetch: number): Promise<{ data: string[] }> {
+  const response = await fetch(`https://catfact.ninja/facts?limit=${numToFetch}&max_length=140`);
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
