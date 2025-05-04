@@ -1,49 +1,99 @@
-.row {
-    display: flex;
-}
 
-.listItem {
-    display: flex;
-    background-color: #995577;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-}
+@media (width > 40em) {
+    .row {
+        display: flex;
+        justify-content: center;
+    }
 
-.listItem:hover {
-    display: flex;
-    background-color: #995577;
-    color: #FFFFFF;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-}
+    .listItem {
+        display: flex;
+        justify-content: center;
+    }
 
+    .listItem:hover {
+        display: flex;
+        justify-content: center;
+    }
+
+    .fact:hover {
+        justify-content: center;
+        flex: 9;
+        background-color: #fcfcfc;
+        color: #477dea;
+    }
+
+    .fact {
+        display: flex;
+        flex: 9;
+        justify-content: center;
+        background-color: #f5f5f5;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        margin-bottom: 3px;
+        padding-left: 12vw;
+        border: 1px solid darkgray;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .hideBtn {
+        display: flex;
+        flex: 1;
+        width: 10vw;
+        background-color: #477dea;
+        height: 100%;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        border: 1px darkgrey solid;
+        margin-right: 3vw;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .hideBtn:hover {
+        display: flex;
+        flex: 1;
+        width: 10vw;
+        background-color: #ff3333;
+        cursor: pointer;
+        height: 100%;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        border: 1px darkgrey solid;
+        margin-right: 3vw;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+}
 @media (width <= 40em) {
 
 
     .listItem {
         display: flex;
         background-color: #f5f5f5;
-        padding-top: 2vh;
-        padding-bottom: 2vh;
         margin-bottom: 3px;
         border: 1px solid darkgray
     }
 
-    .listItem:hover {
-        display: flex;
-        background-color: #995577;
-        color: #FFFFFF;
-        padding-top: 2vh;
-        padding-bottom: 2vh;
-    }
-
     .fact {
+        padding-left: 3vw;
+        display: flex;
         flex: 4;
     }
 
     .hideBtn {
+        display: flex;
         flex: 1;
-        background-color: darkgreen;
+        background-color: #477dea;
         height: 100%;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
     }
 }

@@ -7,3 +7,16 @@
     align-items: center;
     flex-direction: column;
 }
+.centeredColumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 32px;
+}
+.learnMoreLink {
+    font-size: 24px;
+    margin-top: 10px;
+}
